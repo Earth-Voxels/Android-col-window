@@ -6,12 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Build APK
-        uses: pmarati/webview-apk-action@main
+      - name: Build Webview APK
+        uses: nttld/setup-ndk@v1 
+
+      - name: Generate APK
+        uses: hey947/pwa-to-apk@v1.1
         with:
-          app_name: "Android-col-window"
-          app_id: "com.earthvoxels.coolwindow"
-          url: "https://cool-window.netlify.app"
+          app-name: "Android-col-window"
+          package-name: "com.earthvoxels.coolwindow"
+          url: "https://cool-window.netlify.app" # Replace with your actual link
           orientation: "landscape"
+          icon: "icon.png"
