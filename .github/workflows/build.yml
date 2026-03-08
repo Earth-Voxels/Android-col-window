@@ -6,12 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Build APK
         uses: pmarati/webview-apk-action@main
         with:
-          app_name: "Cool Window"
-          app_id: "com.voxels.coolwindow"
+          app_name: "Android-col-window"
+          app_id: "com.earthvoxels.coolwindow"
           url: "https://cool-window.netlify.app"
-          orientation: "landscape" # This forces horizontal
+          orientation: "landscape"
