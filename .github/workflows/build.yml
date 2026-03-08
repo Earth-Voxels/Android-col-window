@@ -1,0 +1,17 @@
+name: Build Android APK
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build APK
+        uses: pmarati/webview-apk-action@main
+        with:
+          app_name: "Cool Window"
+          app_id: "com.voxels.coolwindow"
+          url: "https://cool-window.netlify.app"
+          orientation: "landscape" # This forces horizontal
